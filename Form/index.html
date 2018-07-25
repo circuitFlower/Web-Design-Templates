@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="style.css" >
+  <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Philosopher" rel="stylesheet">
+</head>
+<script>
+<?php
+         if(isset($_POST["submit"])){
+            $servername = "localhost";
+            $username = "root";
+            $password = "root";
+            $dbname = "formMod";
+
+            // Create connection
+            $conn = new mysqli($servername, $username, $password, $dbname);
+
+            // Check connection
+            if ($conn->connect_error) {
+               die("Connection failed: " . $conn->connect_error);
+            }
+            $sql = "INSERT INTO formMode VALUES ('".$_POST["name"]."')";
+
+            if (mysqli_query($conn, $sql)) {
+               echo "New record created successfully";
+            } else {
+               echo "Error: " . $sql . "" . mysqli_error($conn);
+            }
+            $conn->close();
+         }
+      ?>
+</script>
+<form action="index.php" method="POST">
+  <input type="field" name="name">Name</input><br>
+  <input type="field" name="address">Address</input><br>
+  <input type="field" name="phone">Phone</input><br>
+  <input type="submit" name="submit"></input>
+</form>
