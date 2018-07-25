@@ -1,0 +1,53 @@
+<!doctype html>
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css" >
+  <link href="https://fonts.googleapis.com/css?family=Forum|Special+Elite" rel="stylesheet">
+  <link rel="stylesheet" href="animate.min.css">
+  <style>
+    .toggler { width: 10px; height: 200px; position: relative; }
+    #button { padding: .5em 1em; text-decoration: none; list-style: none;  color: #acf; border-radius: 10px;}
+    #effect { width: 10px; height: 170px; margin: 250px 0 0 0; padding: 0.4em; position: absolute; background: #666; border-radius: 10px;}
+  </style>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    var state = true;
+    $( "#button" ).on( "click", function() {
+      if ( state ) {
+        $( "#effect" ).animate({
+          backgroundColor: "#666",
+          color: "#000",
+          width: 125
+        }, 1000 );
+      } else {
+        $( "#effect" ).animate({
+          backgroundColor: "#666",
+          color: "#000",
+          width: 10
+        }, 1000 );
+      }
+      state = !state;
+    });
+  } );
+  </script>
+</head>
+<body>
+  <article id="brand" class="animated bounce"><h1>Amanda Ervin.</h1></article>
+  <nav class="toggler">
+    <ul id="effect" class="ui-widget-content ui-corner-all">
+      <li id="button" class="ui-state-default ui-corner-all">Portfolio</li>
+      <li id="button" class="ui-state-default ui-corner-all">Teaching</li>
+    </ul>
+  </nav>
+  <article>
+    This is me. This is a mock portfolio.
+    <br>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..
+    </article>
+</body>
+<script type="text/javascript" src="jquery-3.3.1.min.js">
+  // add some sort of onclick
+  $('#li').addClass('animated bounce');
+</script>
+
+</html>
