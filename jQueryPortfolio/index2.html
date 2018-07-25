@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Philosopher" rel="stylesheet">
+  </head>
+<script>
+console.log("this is a test");
+console.log("loaded");
+//check to see if document is loaded
+  $(document).ready(function(){
+    console.log("loaded");
+    //array to hold Project objects
+    let obj = [];
+    //add an ul to the dvContent nav
+    $("#dvContent").append("<ul></ul>");
+    //use ajax to find xml page and get data from it.
+    $.ajax({
+      type: "GET",
+      url: "ProjectList.xml",
+      dataType: "xml",
+      success: function(xml){
+        //find each project in the xml page
+      $(xml).find('Project').each(function(){
+        let sTitle = $(this).find('Title').text();
+        let sDescription = $(this).find('Description').text();
+        let sImageLink = $(this).find('ImageLink').text();
+        //create a new object to hold project data elements
+        let newObj = {
+          Title: sTitle,
+          Description: sDescription,
+          ImageLink: sImageLink
+        };//end of let newObj
+        //add newObj to obj
+        obj.push(newObj);
+        //write the ul>li and main content using data from the xml page
+        $("<li></li>").html(sTitle).appendTo("#dvContent ul");
+        $(".main > div").appendTo("div").text("This is my site.");
+      });//end of $(xml).find('Project').each ...
+      //add a click function to the li s
+      $("#dvContent > ul > li").click( function(){
+        let x = $(this).text();
+        //finded is the new letiable to hold object retrieved by title, o is a letiable, like i in a for loop
+        let finded = obj.find(o => o.Title === x);
+        console.log(finded.Title);
+        //update the main section to include the data from the obj
+        $(".main").html("<div>" + finded.Title + "<br>" + finded.Description + "<br><img src='" + finded.ImageLink + "'></div>");
+      })
+      //console.log(obj[1].Title);//format for pulling data from obj array.
+    }//end of success: function(xml){
+    });// end of $.ajax({
+  });//end of $(document).ready(function(){
+</script>
+<article class="heading">
+  Portfolio of Product Design
+    <hr>
+</article>
+<aside>
+  <nav class="menu" id="dvContent">
+</nav>
+</aside>
+<article class="main">
+  <div>
+    This is my project.<br><img src="images/haptic7.jpg">
+  </div>
+</article>
+<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+</html>

@@ -1,0 +1,64 @@
+body{
+  background-color: #dbdbdb;
+}
+aside{
+}
+nav{
+  position: absolute;
+}
+ul{
+}
+li{
+}
+.heading{
+  font-size: 3em;
+  font-weight: 600;
+  font-family: 'Philosopher', sans-serif;
+  margin: 5% 0 0 20%;
+  color: #0069b5;
+}
+.menu ul{
+  padding:0;
+  margin: 0% 2% 2% 2%;
+}
+.menu ul li{
+  background-color: #eee;
+  display:block;
+  width: 100%;
+  padding:10%;
+  /* margin: 5%; */
+  border-bottom: solid 1px black;
+  border-radius: 10px;
+  box-shadow: 10px 10px 10px black;
+  color: #0069b5;
+  font-family: 'Philosopher', sans-serif;
+  font-weight: 600;
+  text-align: center;
+}
+.menu ul li:hover, li:active{
+  box-shadow: 3px 3px 3px black;
+  background-color: #aaa;
+  color: #7a0047;
+}
+.main{
+  position:absolute;
+  width: 60%;
+  min-height: 70%;
+  left: 20%;
+  background: #eee;
+  border-radius: 10px;
+  margin: 0 5% 0 0;
+  font-family: 'Philosopher', sans-serif;
+  box-shadow: 10px 10px 10px black;
+  font-size: 1.5em;
+  color: #0069b5;
+}
+.main div{
+  margin: 5%;
+  text-align:center;
+}
+.main img{
+  width:80%;
+  border-radius: 10px;
+  margin: 5% 0 0 0;
+}

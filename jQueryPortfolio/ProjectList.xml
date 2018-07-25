@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ProjectList>
+  <Project>
+     <Title>IO</Title>
+     <Description>Internet of Things Toy that teaches kids to read through play.</Description>
+     <ImageLink>images/haptic7.jpg</ImageLink>
+  </Project>
+  <Project>
+     <Title>Wearable Board</Title>
+     <Description>A flexible board designed to be sewn into clothing.</Description>
+     <ImageLink>images/dress3.jpg</ImageLink>
+  </Project>
+  <Project>
+     <Title>Wearable Haptic Feedback</Title>
+     <Description>Haptic feedback as communication in clothing.</Description>
+     <ImageLink>images/haptic7.jpg</ImageLink>
+  </Project>
+  <Project>
+     <Title>Heartbeat Blanket</Title>
+     <Description>Internet of Things blanket that sends mom's heartbeat to baby anywhere in the world. Designed specifically for newborn trauma babies.</Description>
+     <ImageLink>images/haptic3.jpg</ImageLink>
+  </Project>
+</ProjectList>
